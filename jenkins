@@ -1,20 +1,36 @@
 pipeline{
     
     agent any 
-
+    
     stages {
-
-        stage('Git checkout'){
-
-            steps {
-                git branch: 'main', url: 'https://github.com/Muqeet466/Jenkins-trial.git'
+        
+        stage('Git Checkout'){
+            
+            steps{
+                
+                script{
+                    
+                    git branch: 'main', url: ''
+                }
             }
         }
-         stage('UNIT TESTING'){
-
-            steps {
-               sh 'mvn test'
+        stage('UNIT testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn test'
+                }
             }
         }
-    }
-}
+        stage('Integration testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn verify -DskipUnitTests'
+                }
+            }
+        }
