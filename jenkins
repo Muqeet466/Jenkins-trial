@@ -10,7 +10,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'main', url: ''
+                    git branch: 'main', url: 'https://github.com/Muqeet466/Jenkins-trial.git'
                 }
             }
         }
